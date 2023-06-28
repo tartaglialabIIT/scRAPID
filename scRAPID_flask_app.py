@@ -1,6 +1,7 @@
 from flask import Flask, request, Response
 import csv
-import mysql.connector
+import sqlite3
+from io import StringIO
 
 app = Flask(__name__)
 
@@ -8,9 +9,9 @@ app = Flask(__name__)
 def hello():
     print("scrapid_db")
     return "scRAPID test"
-    
+
 # Please note that you'll need to replace the /download endpoint with the appropriate route in your Flask application.
-@app.route('/download', methods=['GET'])
+@app.route('/database', methods=['GET'])
 def download_csv():
     # Get query parameters from the request
     protein_query = request.args.get('protein')
@@ -24,7 +25,7 @@ def download_csv():
 
     # Create a response with the CSV data
     response = Response(csv_data, mimetype='text/csv')
-    response.headers.set('Content-Disposition', 'attachment', filename='subset.csv')
+    response.headers.set('Content-Disposition', 'attachment', filename='catRAPID_table_subset.csv')
 
     return response
 
@@ -33,14 +34,31 @@ def query_database(protein_query, rna_query):
     # Modify the query based on the new query options for proteins and RNAs
     query = """
     SELECT * FROM catrapid
-    WHERE (Uniprot_ID = '{}' OR Entry_Name = '{}')
-    AND (Ensembl_Gene_ID = '{}' OR Ensembl_Transcript_ID = '{}' OR gene_name = '{}')
-    """.format(protein_query, protein_query, rna_query, rna_query, rna_query)
+    WHERE (Uniprot_ID = ? OR Entry_Name = ?)
+    AND (Ensembl_Gene_ID = ? OR Ensembl_Transcript_ID = ? OR gene_name = ?)
+    """
 
-    # Execute the query and retrieve the data subset from the database
-    data_subset = execute_database_query(query)
+    # Create a connection to the SQLite database
+    conn = sqlite3.connect('catrapid.db')
+    cursor = conn.cursor()
 
-    return data_subset
+    try:
+        # Execute the query with the provided parameters
+        cursor.execute(query, (protein_query, protein_query, rna_query, rna_query, rna_query))
+
+        # Fetch all rows from the result set
+        data_subset = cursor.fetchall()
+
+        return data_subset
+
+    except Exception as e:
+        # Handle any errors that occurred during the execution
+        print(f"Error executing database query: {e}")
+
+    finally:
+        # Close the cursor and the database connection
+        cursor.close()
+        conn.close()
 
 def generate_csv(data_subset):
     csv_data = StringIO()
@@ -54,41 +72,3 @@ def generate_csv(data_subset):
         writer.writerow(row)
 
     return csv_data.getvalue()
-
-def execute_database_query(query):
-    # Replace with your actual database connection details
-    db_config = {
-        'host': 'localhost',
-        'user': 'your_username',
-        'password': 'your_password',
-        'database': 'your_database',
-    }
-
-    # Establish a connection to the MySQL database
-    conn = mysql.connector.connect(**db_config)
-
-    # Create a cursor to execute SQL statements
-    cursor = conn.cursor()
-
-    try:
-        # Execute the query
-        cursor.execute(query)
-
-        # Fetch all rows from the result set
-        data_subset = cursor.fetchall()
-
-        # Commit the transaction (if necessary)
-        conn.commit()
-
-        return data_subset
-
-    except Exception as e:
-        # Handle any errors that occurred during the execution
-        print(f"Error executing database query: {e}")
-
-    finally:
-        # Close the cursor and the database connection
-        cursor.close()
-        conn.close()
-
-
