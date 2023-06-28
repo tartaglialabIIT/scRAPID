@@ -90,5 +90,4 @@ def execute_database_query(query):
         cursor.close()
         conn.close()
 
-if __name__ == '__main__':
-    app.run()
+
