@@ -4,6 +4,10 @@ import mysql.connector
 
 app = Flask(__name__)
 
+@app.route("/")
+def hello():
+    return "scRAPID test"
+    
 # Please note that you'll need to replace the /download endpoint with the appropriate route in your Flask application.
 @app.route('/download', methods=['GET'])
 def download_csv():
