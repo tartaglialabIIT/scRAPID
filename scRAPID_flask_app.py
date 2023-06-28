@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
+    print("scrapid_db")
     return "scRAPID test"
     
 # Please note that you'll need to replace the /download endpoint with the appropriate route in your Flask application.
