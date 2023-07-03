@@ -3,10 +3,10 @@ GRN inference is based on [BEELINE](https://github.com/Murali-group/Beeline).
 
 PIDC, GRNBOOST2 and SINCERITIES were already available in BEELINE, thus we used the Docker containers provided in it. For TENET, we followed the instructions provided at [https://github.com/neocaleb/TENET](https://github.com/neocaleb/TENET). The script [InferencePipeline.py](InferencePipeline.py) is a wrapper to automatically generate the yaml configuration file used in BEELINE and adding TENET inference to the pipeline. 
 
-DeePSEM instead runs on a GPU architecture and it was implemented following the instructions provided by the authors [https://github.com/HantaoShu/DeepSEM](https://github.com/HantaoShu/DeepSEM). In the folder [DeePSEM](/DeePSEM/) we provide the codes used to run GRN inference using DeePSEM on GPUs.
+DeePSEM instead runs on a GPU architecture and it was implemented following the instructions provided by the authors [https://github.com/HantaoShu/DeepSEM](https://github.com/HantaoShu/DeepSEM). In the folder [DeePSEM](./DeePSEM/) we provide the codes used to run GRN inference using DeePSEM on GPUs.
 
 
-ARACNe-AP was run on a HPC cluster following the instructions provided by the authors [https://github.com/califano-lab/PISCES/tree/master/data](https://github.com/califano-lab/PISCES/tree/master/data). In the folder [ARACNe](/ARACNe/) we provide the codes used to run GRN inference using ARACNe on a HPC cluster.
+ARACNe-AP was run on a HPC cluster following the instructions provided by the authors [https://github.com/califano-lab/PISCES/tree/master/data](https://github.com/califano-lab/PISCES/tree/master/data). In the folder [ARACNe](./ARACNe/) we provide the codes used to run GRN inference using ARACNe on a HPC cluster.
 
 The GRNs inferred by the different algorithms are then formatted as in BEELINE using our script [PostProcessing.py](PostProcessing.py), which can be run as
 
