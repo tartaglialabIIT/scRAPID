@@ -10,7 +10,7 @@ The lists of human and mouse RBPs were compiled by combining the RBPs from the R
 
 We make the RBP lists available [here](scRAPID/Tutorial/).
 
-Conversion between protein names and Uniprot IDs can be done using [Uniprot](https://www.uniprot.org/id-mapping); tables obtained from Uniprot for human and mouse are also provided [here](scRAPID/Tutorial/)
+Conversion between protein names and Uniprot IDs can be done using [Uniprot](https://www.uniprot.org/id-mapping); tables obtained from Uniprot for human and mouse are also provided [here](scRAPID/Tutorial/).
 The csv file can be obtained from our SQL database via curl. Example queries for a single RNA, a single RBP or RBP-RNA pairs:
 
 CHANGE address!!
