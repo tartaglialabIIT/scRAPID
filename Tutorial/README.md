@@ -2,7 +2,7 @@ Here we provide data and codes to run scRAPID on a GRN inferred from a scRNA-seq
 
 We use as an example the network inferred by DeePSEM on a short-read SPLIT-seq dataset from the murine C2C12 cell line. We provide the input data in [inputs](./inputs/) and the GRNs inferred by each algorithm in [outputs](./outputs/).
 
-The tutorial (scRAPID_tutorial.ipynb)[scRAPID_tutorial.ipynb] includes:
+The [tutorial](scRAPID_tutorial.ipynb) includes:
 * Loading and pre-processing of a GRN inferred from single-cell transcriptomic data
 * Prediction of RBP co-interactions based on shared RNA targets
 * catRAPID-based filtering of RBP-RNA interactions
