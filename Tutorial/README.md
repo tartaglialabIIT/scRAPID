@@ -22,16 +22,13 @@ To facilitate the usage of scRAPID with new scRNA-seq datasets in different orga
 
 The lists of human and mouse RBPs were compiled by combining the RBPs from the RBP2GO database having score larger than 10 with those that make up the [catRAPID omics v2.0](http://service.tartaglialab.com/page/catrapid_omics2_group) RBP libraries; the latter sets were further expanded by including, for human and mouse, proteins that are orthologous to the RBPs identified in mouse and human, respectively.
 
-Conversion between protein names and Uniprot IDs can be done using [Uniprot](https://www.uniprot.org/id-mapping); tables obtained from Uniprot for human and mouse are also provided in this folder.
+The csv file can be obtained from our SQL database via curl. Example queries for a single RNA, a single RBP or a RBP-RNA pair:
 
-The csv file can be obtained from our SQL database via curl. Example queries for a single RNA, a single RBP or RBP-RNA pairs:
-
-CHANGE address!!
 ```
-http://127.0.0.1:5000/database?protein=P35637&rna=GAPDH" > my_interactions.csv
+curl "http://scrapid.tartaglialab.com/database?rna=Malat1&protein=Caprin1" > my_MOUSE_interactions.csv
 
-http://127.0.0.1:5000/database?rna=GAPDH" > my_interactions.csv
+curl "http://scrapid.tartaglialab.com/database?protein=FUS" > FUS_HUMAN_interactions.csv
 
-http://127.0.0.1:5000/database?protein=P35637" > my_interactions.csv
+curl "http://scrapid.tartaglialab.com/database?rna=XIST" > XIST_HUMAN_interactions.csv
 
 ```
