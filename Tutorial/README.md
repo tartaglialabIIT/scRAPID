@@ -32,3 +32,5 @@ curl "http://scrapid.tartaglialab.com/database?protein=FUS" > FUS_HUMAN_interact
 curl "http://scrapid.tartaglialab.com/database?rna=XIST" > XIST_HUMAN_interactions.csv
 
 ```
+
+We also provide a bash script ([query_multiple_pairs.sh](query_multiple_pairs.sh)) to perform queries for multiple RBP-RNA pairs stored in a text file (see [protein_rna_pairs.txt](protein_rna_pairs.txt)); the example output is in [concatenated_output.csv](concatenated_output.csv).
