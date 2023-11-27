@@ -1,6 +1,9 @@
 # scRAPID
 single-cell transcriptomic-based RnA-Protein Interaction Detection
 
+[![DOI](https://zenodo.org/badge/653177334.svg)](https://zenodo.org/doi/10.5281/zenodo.10210488)
+
+
 This repository includes data and codes associated with the manuscript [**Fiorentino et al, Prediction of protein-RNA interactions from single-cell transccriptomic data, bioRxiv, 2023**](https://www.biorxiv.org/content/10.1101/2023.07.12.548714v1). 
 
 * The folder [Reproducibility](/Reproducibility/) contains the codes needed to reproduce the results shown in the manuscript, including data pre-processing, Gene Regulatory Network inference, evaluation of protein-RNA interaction inference and plotting the results.
