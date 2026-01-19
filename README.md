@@ -10,6 +10,8 @@ A web-based implementation of **scRAPID** is now available at
 
 The web server provides an interactive interface to run the scRAPID pipeline without local installation, enabling protein–RNA interaction prediction directly from single-cell transcriptomic data.
 
+To align the local scRAPID code to the web server functionalities, the Zenodo record now provides also the SQL databases with pre-computed catRAPID interaction propensities for 8 model organisms.
+
 --- 
 
 This repository includes data and codes associated with the manuscript [**Fiorentino et al, Prediction of protein-RNA interactions from single-cell transccriptomic data, Nucleic Acids Research, 2024**](https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkae076/7607879?searchresult=1). 
