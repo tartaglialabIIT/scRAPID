@@ -13,7 +13,7 @@ The [tutorial](scRAPID_tutorial.ipynb) includes:
   
 The script [scRAPID.py](scRAPID.py) contains the functions used in the tutorial.
 
-We provide also:
+We provide also (see the [scrapid-web documentation](https://tools.tartaglialab.com/doc/scrapid/documentation) for details):
 * Lists of RBPs for 8 model organisms (Arabidopsis Thaliana, Caenorhabditis Elegans, Danio Rerio, Drosophila Melanogaster, Homo sapiens, Mus musculus, Rattus norvegicus and Xenopus tropicalis)
 * RNA libraries should be downloaded from the [Zenodo record](https://zenodo.org/records/18155494) and uncompressed.
 
