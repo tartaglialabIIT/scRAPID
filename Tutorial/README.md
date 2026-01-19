@@ -14,9 +14,8 @@ The [tutorial](scRAPID_tutorial.ipynb) includes:
 The script [scRAPID.py](scRAPID.py) contains the functions used in the tutorial.
 
 We provide also:
-* Lists of RBPs for human and mouse
-* Lists of human and mouse long non-coding RNAs (obtained from GENCODE V41 and M30, respectively)
-* The table with catRAPID interaction propensities for RBPs and RNAs contained in the dataset used in scRAPID tutorial.
+* Lists of RBPs for 8 model organisms (Arabidopsis Thaliana, Caenorhabditis Elegans, Danio Rerio, Drosophila Melanogaster, Homo sapiens, Mus musculus, Rattus norvegicus and Xenopus tropicalis)
+* RNA libraries should be downloaded from the [Zenodo record](https://zenodo.org/records/18155494) and uncompressed.
 
 # SQL databases for multiple model organisms
 
